@@ -20,6 +20,14 @@
 		87070EFC2781CAF400971DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */; };
 		87070EFE27822BE700971DF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070EFD27822BE700971DF7 /* HomeViewController.swift */; };
 		87070F0027822CAC00971DF7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070EFF27822CAC00971DF7 /* SignUpViewController.swift */; };
+		87070F0227830CDE00971DF7 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */; };
+		87070F04278412E200971DF7 /* SubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F03278412E200971DF7 /* SubHomeViewController.swift */; };
+		87070F062784136200971DF7 /* SubHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F052784136200971DF7 /* SubHomeTableViewCell.swift */; };
+		87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F092784289200971DF7 /* Struct Absence.swift */; };
+		87070F0C278428E900971DF7 /* struct course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F0B278428E900971DF7 /* struct course.swift */; };
+		873BDBE5278AE5EF00211DE8 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BDBE4278AE5EF00211DE8 /* TaskViewController.swift */; };
+		873BDBE7278AF6F800211DE8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BDBE6278AF6F800211DE8 /* TaskTableViewCell.swift */; };
+		873BDBE9278AF8EC00211DE8 /* Struct Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BDBE8278AF8EC00211DE8 /* Struct Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +43,14 @@
 		87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87070EFD27822BE700971DF7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		87070EFF27822CAC00971DF7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		87070F03278412E200971DF7 /* SubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHomeViewController.swift; sourceTree = "<group>"; };
+		87070F052784136200971DF7 /* SubHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHomeTableViewCell.swift; sourceTree = "<group>"; };
+		87070F092784289200971DF7 /* Struct Absence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Absence.swift"; sourceTree = "<group>"; };
+		87070F0B278428E900971DF7 /* struct course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "struct course.swift"; sourceTree = "<group>"; };
+		873BDBE4278AE5EF00211DE8 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		873BDBE6278AF6F800211DE8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		873BDBE8278AF8EC00211DE8 /* Struct Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Task.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +89,22 @@
 				87070EDD2781C40D00971DF7 /* AppDelegate.swift */,
 				87070EDF2781C40D00971DF7 /* SceneDelegate.swift */,
 				87070EE12781C40D00971DF7 /* ViewController.swift */,
-				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
 				87070EFF27822CAC00971DF7 /* SignUpViewController.swift */,
+				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
+				87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */,
+				87070F03278412E200971DF7 /* SubHomeViewController.swift */,
+				87070F052784136200971DF7 /* SubHomeTableViewCell.swift */,
+				873BDBE4278AE5EF00211DE8 /* TaskViewController.swift */,
+				873BDBE6278AF6F800211DE8 /* TaskTableViewCell.swift */,
 				87070EE32781C40D00971DF7 /* Main.storyboard */,
 				87070EE92781C41600971DF7 /* Assets.xcassets */,
 				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
 				87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */,
 				87070EEE2781C41600971DF7 /* Info.plist */,
 				87070EE62781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld */,
+				87070F0B278428E900971DF7 /* struct course.swift */,
+				87070F092784289200971DF7 /* Struct Absence.swift */,
+				873BDBE8278AF8EC00211DE8 /* Struct Task.swift */,
 			);
 			path = "Final projact Tuwaq";
 			sourceTree = "<group>";
@@ -165,12 +189,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873BDBE9278AF8EC00211DE8 /* Struct Task.swift in Sources */,
+				87070F04278412E200971DF7 /* SubHomeViewController.swift in Sources */,
+				873BDBE7278AF6F800211DE8 /* TaskTableViewCell.swift in Sources */,
 				87070F0027822CAC00971DF7 /* SignUpViewController.swift in Sources */,
 				87070EFE27822BE700971DF7 /* HomeViewController.swift in Sources */,
+				87070F0C278428E900971DF7 /* struct course.swift in Sources */,
+				87070F0227830CDE00971DF7 /* HomeTableViewCell.swift in Sources */,
+				873BDBE5278AE5EF00211DE8 /* TaskViewController.swift in Sources */,
 				87070EE22781C40D00971DF7 /* ViewController.swift in Sources */,
 				87070EDE2781C40D00971DF7 /* AppDelegate.swift in Sources */,
 				87070EE82781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld in Sources */,
+				87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */,
 				87070EE02781C40D00971DF7 /* SceneDelegate.swift in Sources */,
+				87070F062784136200971DF7 /* SubHomeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

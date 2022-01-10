@@ -12,23 +12,35 @@ class SignUpViewController: UIViewController {
   
     let db = Firestore.firestore()
 
-    
+    var Universitie = [" جامعه الملك سعود","جامعه الملك عبدالعزيز" ,"جامعه الامير سطام بن عبدالعزيز","جامعه الإمام جامعه المجمعه","جامعه شقراء","جامعه ام القرى","جامعه نجران","جامعه تبوك","جامعه الطائف"]
     
     @IBOutlet weak var NameTextFiled: UITextField!
     
-
+    @IBOutlet weak var UniversitieTextFiled: UITextField!
+    
+    
     @IBOutlet weak var EmailTextFiled: UITextField!
     
     
     @IBOutlet weak var passwordTextFiled: UITextField!
-    
+    var pickerView = UIPickerView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NameTextFiled.customTextfield()
         EmailTextFiled.customTextfield()
         passwordTextFiled.customTextfield()
+        UniversitieTextFiled.customTextfield()
+        
+        
+       // createArticleOutlet.layer.cornerRadius = 20
 
+       pickerView.delegate = self
+      pickerView.dataSource = self
+
+        UniversitieTextFiled.inputView = pickerView
+        UniversitieTextFiled.textAlignment = .right
      
     }
     
@@ -55,7 +67,8 @@ class SignUpViewController: UIViewController {
                                     "name" : "\(self.NameTextFiled.text!)",
                                     "email": "\(self.EmailTextFiled.text!)",
                                     "password": "\(self.passwordTextFiled.text!)",
-                                   
+                                    "Universitie": "\(self.UniversitieTextFiled.text!)",
+
                                        
                                    ])
                { error in
@@ -101,4 +114,35 @@ class SignUpViewController: UIViewController {
     
     
     
+}
+
+
+
+
+
+extension SignUpViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return Universitie.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return Universitie[row]
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        UniversitieTextFiled.text = Universitie[row]
+        UniversitieTextFiled.resignFirstResponder()
+
+    }
+
 }
