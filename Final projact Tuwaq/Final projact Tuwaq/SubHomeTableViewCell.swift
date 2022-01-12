@@ -15,25 +15,26 @@ class SubHomeTableViewCell: UITableViewCell {
 
     let db = Firestore.firestore()
     
-    let datePicker = UIDatePicker()
-
+    @IBOutlet weak var dayLabel: UILabel!
     
-    @IBOutlet weak var TodayTextFiled: UITextField!
     
-    @IBOutlet weak var DateTextFiled: UITextField!
+    @IBOutlet weak var detaLabel: UILabel!
     
-    @IBOutlet weak var ratioLable: UILabel!
+    
+  
+    @IBOutlet weak var ratiooLabel: UILabel!
+    
     
 
     
     @IBAction func save(_ sender: Any) {
     
-        let day = TodayTextFiled.text
-        let date = DateTextFiled.text
-       //let ratio = ratioLable.text
-//
-//
-        data(day: "\(day!)", dete: "\(date!)", ratio: 0)
+//        let day = TodayTextFiled.text
+//        let date = DateTextFiled.text
+//        let ratio = Double(ratioLable.text!)!
+////
+////
+//        data(day: "\(day!)", dete: "\(date!)", ratio: ratio)
         
         print("........")
 //        let alert = UIAlertController(title: "", message: "ادخل قيمه", preferredStyle: .alert)
@@ -45,26 +46,26 @@ class SubHomeTableViewCell: UITableViewCell {
      
     }
     
-    func data(day : String , dete  : String, ratio : Double){
-        
-        let userEmail = Auth.auth().currentUser!.email!
-
-        
-        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").document().setData([
-
-            "userEmail" : "\(Auth.auth().currentUser!.email!)",
-            "day": "\(day)",
-            "dete" : "\(dete)",
-          "ratio": "\(ratio)",
-
-        ]) { error in
-
-
-        }
-    
-    
-    
-    }
+//    func data(day : String , dete  : String, ratio : Double){
+//
+//        let userEmail = Auth.auth().currentUser!.email!
+//
+//
+//        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").document().setData([
+//
+//            "userEmail" : "\(Auth.auth().currentUser!.email!)",
+//            "day": "\(day)",
+//            "dete" : "\(dete)",
+//          "ratio": "\(ratio)",
+//
+//        ]) { error in
+//
+//
+//        }
+//
+//
+//
+//    }
     
     
     

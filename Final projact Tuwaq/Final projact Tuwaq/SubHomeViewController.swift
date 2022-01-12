@@ -43,16 +43,16 @@ class SubHomeViewController: UIViewController{
         
         houerLable.text = courseObject!.hourse
         subjactLable.text = courseObject!.name
-        getData()
+        //getData()
         
       //  AddDete.addTarget(self, action: #selector(pressButton(button:)), for: .touchUpInside)
-
+        print(courseObject!.name)
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-     //  getData()
+     //getData()
     }
     
     
@@ -81,11 +81,10 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
         let cell = MyTableViewSubHome.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SubHomeTableViewCell
         
 
-   cell.TodayTextFiled.text = courseObject?.absent[indexPath.row].day
-      cell.DateTextFiled.text = courseObject?.absent[indexPath.row].dete
-       cell.ratioLable.text = "\(courseObject?.absent[indexPath.row].ratio)"
-        cell.DateTextFiled.text = selectedDate ?? ""
-
+        cell.dayLabel.text = courseObject?.absent[indexPath.row].day
+        cell.detaLabel.text = courseObject?.absent[indexPath.row].dete
+        cell.ratiooLabel.text = "\(courseObject!.absent[indexPath.row].ratio)"
+      
         cell.courseObject = courseObject
         
         
@@ -123,7 +122,7 @@ extension SubHomeViewController {
                     let ratio = doc.get("ratio")!
                     
                     print("///////////////",day,dete,ratio)
-                    self.courseObject?.absent.append(Absence(day: "\(day)", dete: "\(dete)", ratio: 1 , total_ratio: 0))
+                    self.courseObject?.absent.append(Absence(day: "\(day)", dete: "\(dete)", ratio: 40 , total_ratio: 0))
 //
                    // print(".........",self.courseObject?.absent)
                     
@@ -138,13 +137,7 @@ extension SubHomeViewController {
         
     }
 
-//    @objc func pressButton(button: UIButton) {
-//         let dateFormatter = DateFormatter()
-//         dateFormatter.dateFormat = "dd MMM yyyy"
-//         selectedDate = dateFormatter.string(from: datePicker.date)
-//        self.MyTableViewSubHome.reloadData()
-//     }
-    
+
     
     
 }
