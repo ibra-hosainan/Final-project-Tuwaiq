@@ -17,6 +17,7 @@ class SubHomeViewController: UIViewController{
     let datePicker = UIDatePicker()
 
     var selectedDate : String?
+    
 
     
     @IBOutlet weak var houerLable: UILabel!
@@ -34,6 +35,16 @@ class SubHomeViewController: UIViewController{
     
     
     
+//    var closure: (() -> Void)?
+//      func someMethod(closure: @escaping () -> Void) {
+//          self.closure = closure
+//      }
+    
+    
+    
+    
+    
+    var pass = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +56,9 @@ class SubHomeViewController: UIViewController{
         subjactLable.text = courseObject!.name
         //getData()
         
+        
       //  AddDete.addTarget(self, action: #selector(pressButton(button:)), for: .touchUpInside)
-        print(courseObject!.name)
+       // print(courseObject!.name)
         
     }
     
@@ -85,8 +97,10 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
         cell.detaLabel.text = courseObject?.absent[indexPath.row].dete
         cell.ratiooLabel.text = "\(courseObject!.absent[indexPath.row].ratio)"
       
-        cell.courseObject = courseObject
+           cell.courseObject = courseObject
+       
         
+           
         
         return cell
         
@@ -95,7 +109,7 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
     }
     
     
-    
+   
     
     
     
@@ -113,7 +127,7 @@ extension SubHomeViewController {
     func getData(){
         let userEmail = Auth.auth().currentUser!.email!
 
-        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").getDocuments { querySnapshot, error in
+        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
             if error == nil {
                 for doc in querySnapshot!.documents {
                 

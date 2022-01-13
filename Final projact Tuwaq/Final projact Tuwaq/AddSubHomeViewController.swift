@@ -10,9 +10,14 @@ import Firebase
 class AddSubHomeViewController: UIViewController {
 
     let db = Firestore.firestore()
-
-    var courseObject : course? = nil
-
+    var courseObject : course!
+   
+//    var a: SubHomeViewController = SubHomeViewController()
+//       func anotherMethod() {
+//           a.someMethod {
+//               self.courseObject?.name
+//           }
+     
     
     @IBOutlet weak var absenceDayTextFiled: UITextField!
     
@@ -22,15 +27,16 @@ class AddSubHomeViewController: UIViewController {
     
     @IBOutlet weak var timesAbsenceTextFiled: UITextField!
     
-    
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
-
+       
         // Do any additional setup after loading the view.
     }
     
-   
+    var a = SubHomeViewController()
     
     @IBAction func saveData(_ sender: Any) {
         
@@ -45,7 +51,7 @@ class AddSubHomeViewController: UIViewController {
         let userEmail = Auth.auth().currentUser!.email!
 
         
-        db.collection("Course").document("\(userEmail)-\(   courseObject?.name)").collection("Abcents").document().setData([
+        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").document().setData([
             "userEmail" : "\(Auth.auth().currentUser!.email!)",
             "day": "\(day)",
             "dete" : "\(dete)",
@@ -62,3 +68,4 @@ class AddSubHomeViewController: UIViewController {
 
 
 }
+

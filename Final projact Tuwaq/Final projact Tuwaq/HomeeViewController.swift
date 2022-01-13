@@ -43,11 +43,13 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
            refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
            myHomeeTableView.addSubview(refreshControl)
         
-       
+        
+     
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getData()
+//        getData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,7 +98,7 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func getData(){
-        db.collection("Course")
+        db.collection("Course").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!)
             .getDocuments { querySnapshot, error in
                 if error == nil {
                     for doc in querySnapshot!.documents {

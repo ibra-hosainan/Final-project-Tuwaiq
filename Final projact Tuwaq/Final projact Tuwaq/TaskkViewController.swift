@@ -72,7 +72,7 @@ extension TaskkViewController : UITableViewDataSource, UITableViewDelegate  {
 extension TaskkViewController {
     
     func getData(){
-        db.collection("Task")
+        db.collection("Task").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!)
             .getDocuments { querySnapshot, error in
                 if error == nil {
                     for doc in querySnapshot!.documents {
@@ -93,8 +93,8 @@ extension TaskkViewController {
     
     
     @objc func refresh(_ sender: AnyObject) {
-       
-        getData()
+        arrayTask.removeAll()
+      getData()
         refreshControl.endRefreshing()
     }
 

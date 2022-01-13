@@ -44,10 +44,9 @@ class ViewController: UIViewController {
             
             if error == nil {
                 
-                self.performSegue(withIdentifier: "moveHome", sender: nil)
-                
+                self.performSegue(withIdentifier: "move", sender: nil)
+
                 print("yasss")
-                
                 
             }else{
                 
