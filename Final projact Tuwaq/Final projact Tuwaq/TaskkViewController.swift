@@ -63,9 +63,40 @@ extension TaskkViewController : UITableViewDataSource, UITableViewDelegate  {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return 350
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let userEmail = Auth.auth().currentUser!.email!
+
+        if (editingStyle == .delete) {
+            db.collection("Task").document("\(userEmail)-\(arrayTask[indexPath.row].subjact)").delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    let alert = UIAlertController(title: "", message: "تم حذف المهمه  \(self.arrayTask[indexPath.row].subjact)", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "موافق", style: .default ,handler: { action in
+                        
+                        self.arrayTask.remove(at: indexPath.row)
+                        self.MyTaskTableView.reloadData()
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                    print("Document successfully removed!")
+                }
+            }
+        }
+
+
+
+
+
+    }
+    
+    
+    
+    
     
 }
 

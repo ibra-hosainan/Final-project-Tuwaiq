@@ -37,21 +37,20 @@ class AddSubjactViewController: UIViewController {
             present(alert, animated: true)
         }else{
             
-            
-            
             let alert = UIAlertController(title: "", message: "تمت الاضافه", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default)
+            let action = UIAlertAction(title: "OK", style: .default ,handler: { action in
+                
+                self.dismiss(animated: true, completion: nil)
+
+            })
             alert.addAction(action)
             present(alert, animated: true)
             data(subject: subjact, hourse: hours)
             
           
-            dismiss(animated: true, completion: nil)
-
-            
             
         }
-              dismiss(animated: true, completion: nil)
+             
 
 }
     }
@@ -71,7 +70,7 @@ extension AddSubjactViewController {
             "name" : "\(subject)",
             "credit": hourse,
                
-           ])
+        ])
             { error in
                    if error == nil {
                        print("New document has been created...")

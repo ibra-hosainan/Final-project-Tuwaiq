@@ -61,7 +61,7 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.hoursTextFiled.text = "\( arrayGrade[indexPath.row].hours)"
         cell.greadTextFiled.text =  "\(arrayGrade[indexPath.row].grade)"
         //cell.index = indexPath.row
-        cell.tableViewDelegate = (self as TableViewDelegate)
+        //cell.tableViewDelegate = (self as TableViewDelegate)
 
         
         return cell
@@ -94,7 +94,7 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
     
         
-//        arrayGrade.append(Grade(subjactName: self.valueToPass, hours: self.valueToPass3, grade: self.valueToPass2))
+        arrayGrade.append(Grade(subjactName: " ", hours: 0, grade: 0))
         MyGpaTableView.reloadData()
         
     }

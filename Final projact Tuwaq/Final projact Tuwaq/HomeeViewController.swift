@@ -19,6 +19,8 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var myHomeeTableView: UITableView!
     
+    var arr : course?
+    
     var arraySubjects : [course] = []
 
     override func viewDidLoad() {
@@ -88,6 +90,34 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
     
 
 }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let userEmail = Auth.auth().currentUser!.email!
+
+        if (editingStyle == .delete) {
+            db.collection("Course").document("\(userEmail)-\(arraySubjects[indexPath.row].name)").delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    let alert = UIAlertController(title: "", message: "تم حذف الماده  \(self.arraySubjects[indexPath.row].name)", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "موافق", style: .default ,handler: { action in
+                        
+                        self.arraySubjects.remove(at: indexPath.row)
+                        self.myHomeeTableView.reloadData()
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                    print("Document successfully removed!")
+                }
+            }
+        }
+
+
+
+
+
+    }
+    
+      
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
         
@@ -116,23 +146,13 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
       getData()
         refreshControl.endRefreshing()
     }
-   
-    func delete(){
-        let userEmail = Auth.auth().currentUser!.email!
-
-        db.collection("Course").document("\(userEmail)-\(arraySubjects)").delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
-            }
-        
-        
-    }
-    
-   
 
 }
+    
+   
+
+
 
     
-    }
+    
+

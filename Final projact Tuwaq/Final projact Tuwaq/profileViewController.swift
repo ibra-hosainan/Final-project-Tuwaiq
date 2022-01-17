@@ -10,8 +10,10 @@ import Firebase
 
 class profileViewController: UIViewController {
 
+    @IBOutlet weak var darkModeSwitchOutlet: UISwitch!
     @IBOutlet weak var nameLabel: UILabel!
     
+    let defaults = UserDefaults.standard
    
     @IBOutlet weak var UniversityLabel: UILabel!
     
@@ -25,6 +27,13 @@ class profileViewController: UIViewController {
         // Do any additional setup after loading the view.
         getData()
         
+//        let darkModeEnabled = defaults.bool(forKey: "darkModeEnabled")
+//
+//        if darkModeEnabled == true {
+//            view.backgroundColor = .black
+//        } else {
+//            view.backgroundColor = .white
+//        }
      
     }
     
@@ -77,7 +86,32 @@ class profileViewController: UIViewController {
 
         
     }
-}
+    
+    
+    
+    @IBAction func darkModeSwitched(_ sender: Any) {
+        
+        if darkModeSwitchOutlet.isOn == true {
+                    //enable dark mode
+                   // DarkisOn = true
+
+                    //add a userDefault here so that the app will stay in dark mode
+                   defaults.set(true, forKey: "darkModeEnabled")
+
+        
+                } else if darkModeSwitchOutlet.isOn == false {
+                  
+                    defaults.set(false, forKey: "darkModeEnabled")
+
+                }
+            }
+        
+        
+    }
+    
+    
+    
+
     
     
 

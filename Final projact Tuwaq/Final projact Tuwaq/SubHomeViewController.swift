@@ -77,17 +77,7 @@ class SubHomeViewController: UIViewController{
         
         
     }
-    
-    
-    @IBAction func addNewAcation(_ sender: Any) {
-        
-              courseObject?.absent.append(Absence(day: "", dete: "", ratio: 0, total_ratio: 0))
-
-        MyTableViewSubHome.reloadData()
-
-    }
-    
-    
+ 
     @IBAction func openAddApcent(_ sender: Any) {
         
         performSegue(withIdentifier: "SheatAbacentSegue", sender: nil)

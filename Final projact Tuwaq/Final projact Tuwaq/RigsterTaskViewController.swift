@@ -40,12 +40,39 @@ class RigsterTaskViewController: UIViewController {
     
     @IBAction func saveData(_ sender: Any) {
         
+        
+        
+        
+        
         let subjact = subjactTextFiled.text!
         let dete = deteTextFiled.text!
         let descraption = descrabtionTextView.text!
         
-        data(subjact: subjact, dete: dete, descrabtion: descraption)
         
+        
+        if subjact == "" && dete == ""{
+            
+           
+            
+            let alert = UIAlertController(title: "", message: "ادخل قيمه", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }else{
+        
+            let alert = UIAlertController(title: "", message: "تمت الاضافه", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default ,handler: { action in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+
+            })
+            alert.addAction(action)
+            present(alert, animated: true)
+           
+        
+        data(subjact: subjact, dete: dete, descrabtion: descraption)
+        }
     }
     
     func data(subjact : String , dete  : String, descrabtion : String ){
