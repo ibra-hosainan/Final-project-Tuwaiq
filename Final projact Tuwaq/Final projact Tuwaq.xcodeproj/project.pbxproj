@@ -25,6 +25,7 @@
 		87070F062784136200971DF7 /* SubHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F052784136200971DF7 /* SubHomeTableViewCell.swift */; };
 		87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F092784289200971DF7 /* Struct Absence.swift */; };
 		87070F0C278428E900971DF7 /* struct course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F0B278428E900971DF7 /* struct course.swift */; };
+		870FC6F32795E92700987DE2 /* HomeUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870FC6F22795E92700987DE2 /* HomeUITableView.swift */; };
 		871CA3D9278ED19A00334695 /* AddSubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */; };
 		871CA3DB279013EB00334695 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DA279013EB00334695 /* profileViewController.swift */; };
 		871CA3DD2790360500334695 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DC2790360500334695 /* TabBarViewController.swift */; };
@@ -58,6 +59,7 @@
 		87070F052784136200971DF7 /* SubHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHomeTableViewCell.swift; sourceTree = "<group>"; };
 		87070F092784289200971DF7 /* Struct Absence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Absence.swift"; sourceTree = "<group>"; };
 		87070F0B278428E900971DF7 /* struct course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "struct course.swift"; sourceTree = "<group>"; };
+		870FC6F22795E92700987DE2 /* HomeUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITableView.swift; sourceTree = "<group>"; };
 		871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubHomeViewController.swift; sourceTree = "<group>"; };
 		871CA3DA279013EB00334695 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		871CA3DC2790360500334695 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				87070EFF27822CAC00971DF7 /* SignUpViewController.swift */,
 				8783692B278DC4E700F5675B /* HomeeViewController.swift */,
 				8783692D278DC63000F5675B /* HomeeCellTableViewCell.swift */,
+				870FC6F22795E92700987DE2 /* HomeUITableView.swift */,
 				87836929278DBF7400F5675B /* AddSubjactViewController.swift */,
 				87070F03278412E200971DF7 /* SubHomeViewController.swift */,
 				87070F052784136200971DF7 /* SubHomeTableViewCell.swift */,
@@ -240,6 +243,7 @@
 				87F08BC82791621000327DA1 /* GPAViewController.swift in Sources */,
 				873A5E4A279159D800E815D4 /* GPATableViewCell.swift in Sources */,
 				8783692A278DBF7400F5675B /* AddSubjactViewController.swift in Sources */,
+				870FC6F32795E92700987DE2 /* HomeUITableView.swift in Sources */,
 				87070EE02781C40D00971DF7 /* SceneDelegate.swift in Sources */,
 				871CA3DB279013EB00334695 /* profileViewController.swift in Sources */,
 				87070F062784136200971DF7 /* SubHomeTableViewCell.swift in Sources */,

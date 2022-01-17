@@ -189,7 +189,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s6x-T8-04b">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s6x-T8-04b" customClass="HomeUITableView" customModule="Final_projact_Tuwaq" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="262" width="414" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -746,9 +746,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbM-BI-pvC">
-                                <rect key="frame" x="20" y="713" width="61" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbM-BI-pvC">
+                                <rect key="frame" x="6" y="676" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="h2M-mg-e7W"/>
+                                    <constraint firstAttribute="height" constant="60" id="lrh-9A-esb"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system"/>
@@ -760,8 +763,10 @@
                         <viewLayoutGuide key="safeArea" id="Lng-A7-uNn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Lng-A7-uNn" firstAttribute="trailing" secondItem="zbM-BI-pvC" secondAttribute="trailing" constant="348" id="9NK-An-FZF"/>
                             <constraint firstItem="TVP-xQ-9N6" firstAttribute="leading" secondItem="Lng-A7-uNn" secondAttribute="leading" id="BdN-te-Imd"/>
                             <constraint firstItem="Lng-A7-uNn" firstAttribute="trailing" secondItem="TVP-xQ-9N6" secondAttribute="trailing" id="CgV-9b-UUY"/>
+                            <constraint firstItem="zbM-BI-pvC" firstAttribute="top" secondItem="TVP-xQ-9N6" secondAttribute="bottom" constant="10" id="HwN-Qu-IZ2"/>
                             <constraint firstItem="Lng-A7-uNn" firstAttribute="bottom" secondItem="TVP-xQ-9N6" secondAttribute="bottom" constant="93" id="YSV-KL-gOi"/>
                             <constraint firstItem="TVP-xQ-9N6" firstAttribute="top" secondItem="Lng-A7-uNn" secondAttribute="top" constant="53" id="fd0-0C-834"/>
                         </constraints>
@@ -774,7 +779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRQ-gl-JWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4635" y="84"/>
+            <point key="canvasLocation" x="4634.7826086956529" y="83.705357142857139"/>
         </scene>
         <!--Rigster Task View Controller-->
         <scene sceneID="yjU-jK-5ml">
@@ -875,8 +880,8 @@
                     <connections>
                         <segue destination="aXB-DP-MKS" kind="relationship" relationship="viewControllers" id="St4-2A-YB7"/>
                         <segue destination="02e-2I-AH6" kind="relationship" relationship="viewControllers" id="ja2-75-iMj"/>
-                        <segue destination="VJK-PO-QHU" kind="relationship" relationship="viewControllers" id="fCv-Ha-aOl"/>
                         <segue destination="5ss-2l-ZUR" kind="relationship" relationship="viewControllers" id="LsE-dg-CkL"/>
+                        <segue destination="VJK-PO-QHU" kind="relationship" relationship="viewControllers" id="fCv-Ha-aOl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD7-Nq-ogB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -934,6 +939,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuN-re-DKQ">
+                                <rect key="frame" x="20" y="218" width="374" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اضغط على + لإضافه ماده جديده!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-31-qmv">
+                                        <rect key="frame" x="26" y="253" width="340" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yIU-9t-4cx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1032,13 +1051,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="OYX-ie-xYS"/>
                     <connections>
+                        <outlet property="MyView" destination="KuN-re-DKQ" id="FOZ-VZ-ciW"/>
                         <outlet property="addSubjactButton" destination="PLA-VK-lsE" id="Hcm-AX-ACX"/>
                         <outlet property="myHomeeTableView" destination="yIU-9t-4cx" id="Tcd-4a-gyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFd-cN-9C5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="84"/>
+            <point key="canvasLocation" x="1928.985507246377" y="83.705357142857139"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

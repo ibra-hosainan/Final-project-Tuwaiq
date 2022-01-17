@@ -10,9 +10,16 @@ import Firebase
 
 class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    @IBOutlet weak var MyView: UIView!
+   
+    @IBOutlet weak var titleEmpty: UILabel!
     @IBOutlet weak var addSubjactButton: UIButton!
     
     let db = Firestore.firestore()
+    
+    
+    
 
     let refreshControl = UIRefreshControl()
 
@@ -48,6 +55,10 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
         
      
         getData()
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,9 +66,15 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arraySubjects.count
-
-    }
+       
+        if arraySubjects.count == 0 {
+            myHomeeTableView.backgroundView = MyView
+          } else {
+              myHomeeTableView.backgroundView = nil
+          }
+       
+       return arraySubjects.count
+      }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myHomeeTableView.dequeueReusableCell(withIdentifier: "HomeeCellTableViewCell",  for: indexPath) as! HomeeCellTableViewCell
@@ -123,6 +140,7 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    
     func getData(){
         db.collection("Course").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!)
             .getDocuments { querySnapshot, error in
@@ -146,13 +164,8 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
       getData()
         refreshControl.endRefreshing()
     }
-
+   
 }
-    
    
 
-
-
-    
-    
 
