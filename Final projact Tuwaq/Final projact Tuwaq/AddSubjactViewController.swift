@@ -25,12 +25,36 @@ class AddSubjactViewController: UIViewController {
         let subjact = subjactTextFiled.text!
         let hours =  hourseTextFiled.text!
         
-        data(subject: subjact, hourse: hours)
-    }
     
-    
+        
+        if subjact == "" && hours == ""{
+            
+           
+            
+            let alert = UIAlertController(title: "", message: "ادخل قيمه", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true)
+        }else{
+            
+            
+            
+            let alert = UIAlertController(title: "", message: "تمت الاضافه", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(action)
+            present(alert, animated: true)
+            data(subject: subjact, hourse: hours)
+            
+          
+            dismiss(animated: true, completion: nil)
+
+            
+            
+        }
+              dismiss(animated: true, completion: nil)
 
 }
+    }
 
 
 extension AddSubjactViewController {

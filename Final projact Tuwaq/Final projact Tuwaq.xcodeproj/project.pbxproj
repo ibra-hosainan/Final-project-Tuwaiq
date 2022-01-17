@@ -28,6 +28,7 @@
 		871CA3D9278ED19A00334695 /* AddSubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */; };
 		871CA3DB279013EB00334695 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DA279013EB00334695 /* profileViewController.swift */; };
 		871CA3DD2790360500334695 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DC2790360500334695 /* TabBarViewController.swift */; };
+		873A5E4A279159D800E815D4 /* GPATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A5E49279159D800E815D4 /* GPATableViewCell.swift */; };
 		873BDBE9278AF8EC00211DE8 /* Struct Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BDBE8278AF8EC00211DE8 /* Struct Task.swift */; };
 		8783692A278DBF7400F5675B /* AddSubjactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87836929278DBF7400F5675B /* AddSubjactViewController.swift */; };
 		8783692C278DC4E700F5675B /* HomeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783692B278DC4E700F5675B /* HomeeViewController.swift */; };
@@ -35,6 +36,8 @@
 		87AD4088278C1D240085645F /* TaskkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD4087278C1D240085645F /* TaskkViewController.swift */; };
 		87AD408A278C1F370085645F /* RigsterTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD4089278C1F370085645F /* RigsterTaskViewController.swift */; };
 		87AD408C278C226F0085645F /* TaskkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD408B278C226F0085645F /* TaskkTableViewCell.swift */; };
+		87F08BC82791621000327DA1 /* GPAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F08BC72791621000327DA1 /* GPAViewController.swift */; };
+		87F08BCA2792BA7E00327DA1 /* Struct Gread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F08BC92792BA7D00327DA1 /* Struct Gread.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,7 @@
 		871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubHomeViewController.swift; sourceTree = "<group>"; };
 		871CA3DA279013EB00334695 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		871CA3DC2790360500334695 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		873A5E49279159D800E815D4 /* GPATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPATableViewCell.swift; sourceTree = "<group>"; };
 		873BDBE8278AF8EC00211DE8 /* Struct Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Task.swift"; sourceTree = "<group>"; };
 		87836929278DBF7400F5675B /* AddSubjactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjactViewController.swift; sourceTree = "<group>"; };
 		8783692B278DC4E700F5675B /* HomeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		87AD4087278C1D240085645F /* TaskkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskkViewController.swift; sourceTree = "<group>"; };
 		87AD4089278C1F370085645F /* RigsterTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigsterTaskViewController.swift; sourceTree = "<group>"; };
 		87AD408B278C226F0085645F /* TaskkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskkTableViewCell.swift; sourceTree = "<group>"; };
+		87F08BC72791621000327DA1 /* GPAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAViewController.swift; sourceTree = "<group>"; };
+		87F08BC92792BA7D00327DA1 /* Struct Gread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Gread.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +113,14 @@
 				87070EFF27822CAC00971DF7 /* SignUpViewController.swift */,
 				8783692B278DC4E700F5675B /* HomeeViewController.swift */,
 				8783692D278DC63000F5675B /* HomeeCellTableViewCell.swift */,
+				87836929278DBF7400F5675B /* AddSubjactViewController.swift */,
 				87070F03278412E200971DF7 /* SubHomeViewController.swift */,
 				87070F052784136200971DF7 /* SubHomeTableViewCell.swift */,
-				87836929278DBF7400F5675B /* AddSubjactViewController.swift */,
+				871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */,
 				87AD4087278C1D240085645F /* TaskkViewController.swift */,
 				87AD408B278C226F0085645F /* TaskkTableViewCell.swift */,
 				87AD4089278C1F370085645F /* RigsterTaskViewController.swift */,
+				871CA3DA279013EB00334695 /* profileViewController.swift */,
 				87070EE32781C40D00971DF7 /* Main.storyboard */,
 				87070EE92781C41600971DF7 /* Assets.xcassets */,
 				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
@@ -122,10 +130,11 @@
 				87070F0B278428E900971DF7 /* struct course.swift */,
 				87070F092784289200971DF7 /* Struct Absence.swift */,
 				873BDBE8278AF8EC00211DE8 /* Struct Task.swift */,
+				87F08BC92792BA7D00327DA1 /* Struct Gread.swift */,
 				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
 				87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */,
-				871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */,
-				871CA3DA279013EB00334695 /* profileViewController.swift */,
+				87F08BC72791621000327DA1 /* GPAViewController.swift */,
+				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
 			);
 			path = "Final projact Tuwaq";
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 				87070F04278412E200971DF7 /* SubHomeViewController.swift in Sources */,
 				87070F0027822CAC00971DF7 /* SignUpViewController.swift in Sources */,
 				871CA3DD2790360500334695 /* TabBarViewController.swift in Sources */,
+				87F08BCA2792BA7E00327DA1 /* Struct Gread.swift in Sources */,
 				87AD408C278C226F0085645F /* TaskkTableViewCell.swift in Sources */,
 				8783692E278DC63000F5675B /* HomeeCellTableViewCell.swift in Sources */,
 				87AD4088278C1D240085645F /* TaskkViewController.swift in Sources */,
@@ -227,6 +237,8 @@
 				87070EE82781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld in Sources */,
 				87AD408A278C1F370085645F /* RigsterTaskViewController.swift in Sources */,
 				87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */,
+				87F08BC82791621000327DA1 /* GPAViewController.swift in Sources */,
+				873A5E4A279159D800E815D4 /* GPATableViewCell.swift in Sources */,
 				8783692A278DBF7400F5675B /* AddSubjactViewController.swift in Sources */,
 				87070EE02781C40D00971DF7 /* SceneDelegate.swift in Sources */,
 				871CA3DB279013EB00334695 /* profileViewController.swift in Sources */,

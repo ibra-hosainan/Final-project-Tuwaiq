@@ -18,33 +18,23 @@ class SubHomeViewController: UIViewController{
 
     var selectedDate : String?
     
+    let refreshControl = UIRefreshControl()
+
 
     
     @IBOutlet weak var houerLable: UILabel!
     
     
-    
     @IBOutlet weak var subjactLable: UILabel!
     
 
-    @IBOutlet weak var AddDete: UIButton!
     
     
     @IBOutlet weak var MyTableViewSubHome: UITableView!
     
+    @IBOutlet weak var totalRatio: UILabel!
     
-    
-    
-//    var closure: (() -> Void)?
-//      func someMethod(closure: @escaping () -> Void) {
-//          self.closure = closure
-//      }
-    
-    
-    
-    
-    
-    var pass = ""
+    @IBOutlet weak var openAddApcentOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,17 +44,38 @@ class SubHomeViewController: UIViewController{
         
         houerLable.text = courseObject!.hourse
         subjactLable.text = courseObject!.name
-        //getData()
+        
+//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+//           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+//        MyTableViewSubHome.addSubview(refreshControl)
+//
+//
+        getData()
         
         
-      //  AddDete.addTarget(self, action: #selector(pressButton(button:)), for: .touchUpInside)
-       // print(courseObject!.name)
+        
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
+
+        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
+
+        openAddApcentOutlet.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
+        openAddApcentOutlet.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        openAddApcentOutlet.setImage(largeBoldPost, for: .normal)
+        openAddApcentOutlet.setRounded()
+
+        
+        
+    
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-     //getData()
+    
+        print("\\\\\\\\\\\\\\\\\\\\\\\\\\")
+       cal()
+        
+        
     }
     
     
@@ -76,7 +87,21 @@ class SubHomeViewController: UIViewController{
 
     }
     
-
+    
+    @IBAction func openAddApcent(_ sender: Any) {
+        
+        performSegue(withIdentifier: "SheatAbacentSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let des = segue.destination as? AddSubHomeViewController{
+            
+            des.courseObject = courseObject
+            
+            
+        }
+    }
+    
 }
 
 
@@ -99,7 +124,7 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
       
            cell.courseObject = courseObject
        
-        
+            
            
         
         return cell
@@ -108,7 +133,10 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
+    }
    
     
     
@@ -127,19 +155,20 @@ extension SubHomeViewController {
     func getData(){
         let userEmail = Auth.auth().currentUser!.email!
 
-        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
+        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
             if error == nil {
                 for doc in querySnapshot!.documents {
                 
                     let day = doc.get("day")!
                     let dete = doc.get("dete")!
-                    let ratio = doc.get("ratio")!
+                    var ratio = Double(doc.get("ratio") as! Substring)!
                     
-                    print("///////////////",day,dete,ratio)
-                    self.courseObject?.absent.append(Absence(day: "\(day)", dete: "\(dete)", ratio: 40 , total_ratio: 0))
-//
-                   // print(".........",self.courseObject?.absent)
-                    
+                    print("day :::", day,
+                          "dete :::", dete,
+                          "ratio :::", ratio
+                    )
+                    self.courseObject?.absent.append(Absence(day: "\(day)", dete: "\(dete)", ratio: ratio , total_ratio: 0))
+
                 }
 
 
@@ -147,13 +176,60 @@ extension SubHomeViewController {
             } else {
                 print(error!.localizedDescription)
             }
+            
+            
+            
+            
+            
         }
         
     }
 
 
+    func cal(){
+        let userEmail = Auth.auth().currentUser!.email!
+
+        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
+            if error == nil {
+                for doc in querySnapshot!.documents {
+                
+                    var x = Double (self.houerLable.text!)!
+
+                    var ratio = Double(doc.get("ratio") as! Substring)!
+
+                    print("ratioooooooo :::", ratio, "hourrrrr", x)
+                   
+            
+                                var y = ratio / x * 14
+                                 print(y)
+
+
+                                var d = 0.0
+                                d += 25 - y
+                            print("mmm : ",d)
+
+
+
+                         self.totalRatio.text! = "\(d)"
+    
+                    
+    }
     
     
 }
-
+        
+        }
+    }
+    
+//    @objc func refresh(_ sender: AnyObject) {
+////        arraySubjects.removeAll()
+//      getData()
+//        refreshControl.endRefreshing()
+//    }
+//
+    
+    
+    
+        
+}
 

@@ -13,6 +13,7 @@ class profileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
    
+    @IBOutlet weak var UniversityLabel: UILabel!
     
     let db = Firestore.firestore()
     let email = Auth.auth().currentUser!.email!
@@ -24,7 +25,7 @@ class profileViewController: UIViewController {
         // Do any additional setup after loading the view.
         getData()
         
-       // nameLabel.text = email
+     
     }
     
 
@@ -60,10 +61,12 @@ class profileViewController: UIViewController {
                 if error == nil {
 
                     let name = querySnapshot?.documents[0].get("name")
-                    //let Universitie = querySnapshot?.documents[0].get("Universitie")!
+                    
+                   let Universitie = querySnapshot?.documents[0].get("Universitie")!
 
-                   // self.UniversityLabel.text = Universitie as! String
+                 
                   self.nameLabel.text = "\(name!)"
+                  self.UniversityLabel.text = "\(Universitie!)"
 
 
                 } else {

@@ -67,6 +67,8 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextvc = storyboard?.instantiateViewController(withIdentifier: "SubHomeViewController") as! SubHomeViewController
         
+ 
+        
         let cell = myHomeeTableView.cellForRow(at: indexPath) as! HomeeCellTableViewCell
         
         
@@ -77,15 +79,9 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
         var temp =  arraySubjects[indexPath.row]
         temp.name = subjact
         temp.hourse = Hours
-        
-      
-        
         nextvc.courseObject = temp
-        
-       // data(subject: subjact!, hourse: Hours!)
-
-       
-
+       print("temp : ",temp)
+   
 
         self.present(nextvc, animated: true, completion: nil)
 
@@ -115,11 +111,28 @@ class HomeeViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
     }
-    
     @objc func refresh(_ sender: AnyObject) {
         arraySubjects.removeAll()
       getData()
         refreshControl.endRefreshing()
     }
+   
+    func delete(){
+        let userEmail = Auth.auth().currentUser!.email!
+
+        db.collection("Course").document("\(userEmail)-\(arraySubjects)").delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        
+        
+    }
+    
+   
 
 }
+
+    
+    }
