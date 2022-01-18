@@ -113,6 +113,31 @@
 				8738E36127973DDB000E5C04 /* Model */,
 				87070EDD2781C40D00971DF7 /* AppDelegate.swift */,
 				87070EDF2781C40D00971DF7 /* SceneDelegate.swift */,
+				87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */,
+				87070EEE2781C41600971DF7 /* Info.plist */,
+				87070EE62781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld */,
+				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
+				87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */,
+				87F08BC72791621000327DA1 /* GPAViewController.swift */,
+				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
+			);
+			path = "Final projact Tuwaq";
+			sourceTree = "<group>";
+		};
+		8738E36127973DDB000E5C04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87070F0B278428E900971DF7 /* struct course.swift */,
+				87070F092784289200971DF7 /* Struct Absence.swift */,
+				873BDBE8278AF8EC00211DE8 /* Struct Task.swift */,
+				87F08BC92792BA7D00327DA1 /* Struct Gread.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8738E36227973FC4000E5C04 /* controller */ = {
+			isa = PBXGroup;
+			children = (
 				87070EE12781C40D00971DF7 /* ViewController.swift */,
 				871CA3DC2790360500334695 /* TabBarViewController.swift */,
 				87070EFF27822CAC00971DF7 /* SignUpViewController.swift */,
@@ -127,34 +152,6 @@
 				87AD408B278C226F0085645F /* TaskkTableViewCell.swift */,
 				87AD4089278C1F370085645F /* RigsterTaskViewController.swift */,
 				871CA3DA279013EB00334695 /* profileViewController.swift */,
-				87070EE32781C40D00971DF7 /* Main.storyboard */,
-				87070EE92781C41600971DF7 /* Assets.xcassets */,
-				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
-				87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */,
-				87070EEE2781C41600971DF7 /* Info.plist */,
-				87070EE62781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld */,
-				87070F0B278428E900971DF7 /* struct course.swift */,
-				87070F092784289200971DF7 /* Struct Absence.swift */,
-				873BDBE8278AF8EC00211DE8 /* Struct Task.swift */,
-				87F08BC92792BA7D00327DA1 /* Struct Gread.swift */,
-				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
-				87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */,
-				87F08BC72791621000327DA1 /* GPAViewController.swift */,
-				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
-			);
-			path = "Final projact Tuwaq";
-			sourceTree = "<group>";
-		};
-		8738E36127973DDB000E5C04 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8738E36227973FC4000E5C04 /* controller */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -162,6 +159,9 @@
 		8738E36327973FEA000E5C04 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87070EE32781C40D00971DF7 /* Main.storyboard */,
+				87070EE92781C41600971DF7 /* Assets.xcassets */,
+				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
