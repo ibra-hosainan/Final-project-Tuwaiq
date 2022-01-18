@@ -108,6 +108,9 @@
 		87070EDC2781C40D00971DF7 /* Final projact Tuwaq */ = {
 			isa = PBXGroup;
 			children = (
+				8738E36327973FEA000E5C04 /* View */,
+				8738E36227973FC4000E5C04 /* controller */,
+				8738E36127973DDB000E5C04 /* Model */,
 				87070EDD2781C40D00971DF7 /* AppDelegate.swift */,
 				87070EDF2781C40D00971DF7 /* SceneDelegate.swift */,
 				87070EE12781C40D00971DF7 /* ViewController.swift */,
@@ -140,6 +143,27 @@
 				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
 			);
 			path = "Final projact Tuwaq";
+			sourceTree = "<group>";
+		};
+		8738E36127973DDB000E5C04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8738E36227973FC4000E5C04 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8738E36327973FEA000E5C04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,8 +7,39 @@
 
 import UIKit
 import Firebase
-class AddSubjactViewController: UIViewController {
+class AddSubjactViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayCountHours.count
+
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+   
+        return arrayCountHours[row]
+        
+    }
+   
+   
+       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+   
+           hourseTextFiled.text = arrayCountHours[row]
+           hourseTextFiled.resignFirstResponder()
+
+   
+       }
+    
     let db = Firestore.firestore()
+
+    var arrayCountHours = ["1","2","3","4","5","6","7","8","9","10"]
+    var pickerView = UIPickerView()
+
 
     @IBOutlet weak var subjactTextFiled: UITextField!
     
@@ -16,9 +47,13 @@ class AddSubjactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pickerView.delegate = self
+       pickerView.dataSource = self
+        
+        hourseTextFiled.inputView = pickerView
+        hourseTextFiled.textAlignment = .right
     }
+    
     
 
     @IBAction func saveData(_ sender: Any) {

@@ -94,7 +94,7 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
     
         
-        arrayGrade.append(Grade(subjactName: " ", hours: 0, grade: 0))
+        arrayGrade.append(Grade(subjactName: "hhh ", hours: 3, grade: 95))
         MyGpaTableView.reloadData()
         
     }
