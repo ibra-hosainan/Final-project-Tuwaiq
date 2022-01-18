@@ -181,34 +181,26 @@ extension SubHomeViewController {
 
         db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
             if error == nil {
-                var sumAbcant = 0.0
                 for doc in querySnapshot!.documents {
                 
-                    let x = Double (self.houerLable.text!)!
-            
-                    let ratio = Double(doc.get("ratio") as! Substring)!
+                    var x = Double (self.houerLable.text!)!
+
+                    var ratio = Double(doc.get("ratio") as! Substring)!
+
+                    print("ratioooooooo :::", ratio, "hourrrrr", x)
                    
-                    sumAbcant += ratio
-                    print("ratioooooooo :::", sumAbcant, "hourrrrr", x)
-                   
             
-                         let calOfweak = x * 14
-                                 print("calOfweak",calOfweak)
-                                 
-                    let result = sumAbcant / calOfweak * 100
-                                 
-                           
-                                 print("the result :", round(result*10)/10)
+                                var y = ratio / x * 14
+                                 print(y)
 
 
                                 var d = 0.0
-                                d = 25 - result
-                            print("mmm : ",round(d*10)/10)
+                                d += 25 - y
+                            print("mmm : ",d)
 
 
 
-                         self.totalRatio.text! = "\(round(d*10)/10)"
-                    
+                         self.totalRatio.text! = "\(d)"
     
                     
     }
