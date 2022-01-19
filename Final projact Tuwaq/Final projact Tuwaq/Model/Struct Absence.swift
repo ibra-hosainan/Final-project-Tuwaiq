@@ -7,17 +7,11 @@
 
 import Foundation
 
-
-struct Absence{
-    
-    
+struct Absencen {
     
     var day : String
     var dete : String
     var ratio : Double
     var total_ratio : Float
-    
-    
-    
     
 }

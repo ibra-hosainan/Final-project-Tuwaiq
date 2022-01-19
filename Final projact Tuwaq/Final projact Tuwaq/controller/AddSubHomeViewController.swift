@@ -7,74 +7,35 @@
 
 import UIKit
 import Firebase
-class AddSubHomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-   
-    
-  //var arrday = ["السبت","الاحد","الاثنين","الثلاثاء","الاربعاء","الخميس"]
-    
-    var arrayCountabcant = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       return arrayCountabcant.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-   
-        return arrayCountabcant[row]
-        
-    }
-   
-   
-       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-   
-           timesAbsenceTextFiled.text = arrayCountabcant[row]
-           timesAbsenceTextFiled.resignFirstResponder()
 
-   
-       }
+class AddSubHomeViewController: UIViewController {
     
-    
-    
-
     let db = Firestore.firestore()
     
+    //var arrday = ["السبت","الاحد","الاثنين","الثلاثاء","الاربعاء","الخميس"]
+    
+    var arrayCountabcant = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     let datePicker = UIDatePicker()
     var toolbar = UIToolbar();
-
     var courseObject : course? = nil
-    
     var pickerView = UIPickerView()
-
     
     @IBOutlet weak var absenceDayTextFiled: UITextField!
-    
-    
     @IBOutlet weak var dateTextFiled: UITextField!
-    
-    
     @IBOutlet weak var timesAbsenceTextFiled: UITextField!
     
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        showDatePicker()
         
+        showDatePicker()
         pickerView.delegate = self
-       pickerView.dataSource = self
-      
+        pickerView.dataSource = self
         timesAbsenceTextFiled.inputView = pickerView
         timesAbsenceTextFiled.textAlignment = .right
-        
-         hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
     }
     
-   
+    
     
     @IBAction func saveData(_ sender: Any) {
         
@@ -96,80 +57,112 @@ class AddSubHomeViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let action = UIAlertAction(title: "OK", style: .default ,handler: { action in
                 
                 self.dismiss(animated: true, completion: nil)
-
+                
             })
             alert.addAction(action)
             present(alert, animated: true)
-          
+            
             
             data(day: "\( absenceDay)", dete: "\( date)", ratio: timesAbsenc)
             
         }
-       
+        
         
     }
+    
+    
+    
+    
+}
+
+
+extension AddSubHomeViewController {
+    
     
     func data(day : String , dete  : String, ratio : Double){
         
         let userEmail = Auth.auth().currentUser!.email!
-
+        
         
         db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").document().setData([
             "userEmail" : "\(Auth.auth().currentUser!.email!)",
             "day": "\(day)",
             "dete" : "\(dete)",
-          "ratio": "\(ratio)",
-
+            "ratio": "\(ratio)",
+            
         ]) { error in
-            if error == nil{
+            
+            if error == nil {
                 
                 print("yassss")
             }else{
                 
                 print("noooooo")
             }
-   
-
         }
-    
-    
-    
     }
     
     func showDatePicker(){
-       //Formate Date
+        
+        //Formate Date
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
-      //ToolBar
-   
-      toolbar.sizeToFit()
-      let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        //ToolBar
+        
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-     let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-
-    toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
         dateTextFiled.inputAccessoryView = toolbar
         dateTextFiled.inputView = datePicker
-      
-
+        
+        
     }
     
     @objc func donedatePicker(){
-
-     let formatter = DateFormatter()
-     formatter.dateFormat = "dd/MM/yyyy"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
         dateTextFiled.text = formatter.string(from: datePicker.date)
-     self.view.endEditing(true)
-   }
-
-   
-    
-    @objc func cancelDatePicker(){
-      self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
-
-
+    
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
 }
 
+
+
+extension AddSubHomeViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return arrayCountabcant.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return arrayCountabcant[row]
+        
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        timesAbsenceTextFiled.text = arrayCountabcant[row]
+        timesAbsenceTextFiled.resignFirstResponder()
+        
+    }
+    
+}

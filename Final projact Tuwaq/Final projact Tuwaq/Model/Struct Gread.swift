@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Grade{
+struct Grade {
+    
     var subjactName : String
     var hours : Int
     var grade : Int
-    
     
 }

@@ -8,79 +8,57 @@
 import UIKit
 import Firebase
 
-class SubHomeViewController: UIViewController{
+class SubHomeViewController: UIViewController {
     
     var courseObject : course? = nil
-    
     let db = Firestore.firestore()
-    
     let datePicker = UIDatePicker()
-
     var selectedDate : String?
-    
     let refreshControl = UIRefreshControl()
-
-
     
     @IBOutlet weak var houerLable: UILabel!
-    
-    
     @IBOutlet weak var subjactLable: UILabel!
-    
-
     @IBOutlet weak var partialRatio: UILabel!
-    
-    
     @IBOutlet weak var MyTableViewSubHome: UITableView!
-    
     @IBOutlet weak var totalRatio: UILabel!
-    
-    
-    
     @IBOutlet weak var openAddApcentOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         MyTableViewSubHome.dataSource = self
         MyTableViewSubHome.delegate = self
         
         houerLable.text = courseObject!.hourse
         subjactLable.text = courseObject!.name
         
-//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-//           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-//        MyTableViewSubHome.addSubview(refreshControl)
-//
-//
+        //        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        //           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        //        MyTableViewSubHome.addSubview(refreshControl)
+        //
+        //
         getData()
         
         
-//        
-//        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-//
-//        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
-//
-//        openAddApcentOutlet.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
-//        openAddApcentOutlet.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-//        openAddApcentOutlet.setImage(largeBoldPost, for: .normal)
-//        openAddApcentOutlet.setRounded()
-
-        
-        
-    
+        //
+        //        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
+        //
+        //        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
+        //
+        //        openAddApcentOutlet.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
+        //        openAddApcentOutlet.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        //        openAddApcentOutlet.setImage(largeBoldPost, for: .normal)
+        //        openAddApcentOutlet.setRounded()
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-    
-        print("\\\\\\\\\\\\\\\\\\\\\\\\\\")
-       cal()
         
+        cal()
         
     }
- 
+    
     @IBAction func openAddApcent(_ sender: Any) {
         
         performSegue(withIdentifier: "SheatAbacentSegue", sender: nil)
@@ -102,42 +80,31 @@ extension SubHomeViewController :UITableViewDataSource, UITableViewDelegate  {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return arrayAbsence.count
+        // return arrayAbsence.count
         
         return courseObject?.absent.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = MyTableViewSubHome.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SubHomeTableViewCell
         
-
+        
         cell.dayLabel.text = courseObject?.absent[indexPath.row].day
         cell.detaLabel.text = courseObject?.absent[indexPath.row].dete
         cell.ratiooLabel.text = "\(courseObject!.absent[indexPath.row].ratio)"
-      
-           cell.courseObject = courseObject
-       
-            
-           
+        
+        cell.courseObject = courseObject
         
         return cell
-        
-        
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 100
         
     }
-   
-    
-    
-    
-    
-    
-    
-    
     
 }
 
@@ -147,11 +114,11 @@ extension SubHomeViewController {
     
     func getData(){
         let userEmail = Auth.auth().currentUser!.email!
-
+        
         db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
             if error == nil {
                 for doc in querySnapshot!.documents {
-                
+                    
                     let day = doc.get("day")!
                     let dete = doc.get("dete")!
                     var ratio = Double(doc.get("ratio") as! Substring)!
@@ -160,77 +127,69 @@ extension SubHomeViewController {
                           "dete :::", dete,
                           "ratio :::", ratio
                     )
-                    self.courseObject?.absent.append(Absence(day: "\(day)", dete: "\(dete)", ratio: ratio , total_ratio: 0))
-
+                    self.courseObject?.absent.append(Absencen(day: "\(day)", dete: "\(dete)", ratio: ratio , total_ratio: 0))
+                    
                 }
-
-
-               self.MyTableViewSubHome.reloadData()
+                
+                
+                self.MyTableViewSubHome.reloadData()
             } else {
                 print(error!.localizedDescription)
             }
-            
-            
-            
-            
-            
         }
-        
     }
-
-
+    
+    
     func cal(){
-            let userEmail = Auth.auth().currentUser!.email!
-
-            db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
-                if error == nil {
-                    var sumAbcant = 0.0
-                    for doc in querySnapshot!.documents {
+        
+        let userEmail = Auth.auth().currentUser!.email!
+        
+        db.collection("Course").document("\(userEmail)-\(courseObject!.name)").collection("Abcents").whereField("userEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { querySnapshot, error in
+            if error == nil {
+                var sumAbcant = 0.0
+                for doc in querySnapshot!.documents {
                     
-                        let x = Double (self.houerLable.text!)!
+                    let x = Double (self.houerLable.text!)!
+                    
+                    let ratio = Double(doc.get("ratio") as! Substring)!
+                    
+                    sumAbcant += ratio
+                    print("ratioooooooo :::", sumAbcant, "hourrrrr", x)
+                    
+                    
+                    let calOfweak = x * 14
+                    print("calOfweak",calOfweak)
+                    
+                    let result = sumAbcant / calOfweak * 100
+                    
+                    
+                    print("the result :", round(result*10)/10)
+                    
+                    
+                    var d = 0.0
+                    d = 25 - result
+                    print("mmm : ",round(d*10)/10)
+                    
+                    
+                    
+                    self.totalRatio.text! = "\(round(d*10)/10)%"
+                    
+                    self.partialRatio.text! = "\(round(result*10)/10) %"
+                    
+                }
                 
-                        let ratio = Double(doc.get("ratio") as! Substring)!
-                       
-                        sumAbcant += ratio
-                        print("ratioooooooo :::", sumAbcant, "hourrrrr", x)
-                       
                 
-                             let calOfweak = x * 14
-                                     print("calOfweak",calOfweak)
-                                     
-                        let result = sumAbcant / calOfweak * 100
-                                     
-                               
-                                     print("the result :", round(result*10)/10)
-
-
-                                    var d = 0.0
-                                    d = 25 - result
-                                print("mmm : ",round(d*10)/10)
-
-
-
-                             self.totalRatio.text! = "\(round(d*10)/10)%"
-                        
-                        self.partialRatio.text! = "\(round(result*10)/10) %"
-                        
-        }
-        
-        
-    }
-            
             }
+            
         }
+    }
     
-//    @objc func refresh(_ sender: AnyObject) {
-////        arraySubjects.removeAll()
-//      getData()
-//        refreshControl.endRefreshing()
-//    }
-//
+    //    @objc func refresh(_ sender: AnyObject) {
+    ////        arraySubjects.removeAll()
+    //      getData()
+    //        refreshControl.endRefreshing()
+    //    }
+    //
     
-    
-    
-        
 }
 

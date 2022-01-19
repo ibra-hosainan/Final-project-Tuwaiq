@@ -9,15 +9,11 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    
     let db = Firestore.firestore()
-
+    
     @IBOutlet weak var EmailTextFiled: UITextField!
-    
     @IBOutlet weak var passwordTextFiled: UITextField!
-    
-   
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +24,32 @@ class ViewController: UIViewController {
     }
     
     
-
+    
     @IBAction func ForgetPassword(_ sender: Any) {
         
     }
     
     @IBAction func signinBoutton(_ sender: Any) {
+        
         SignInUser(Email: EmailTextFiled.text!, Password: passwordTextFiled.text!)
     }
     
-   
+    
+}
+
+
+
+
+extension ViewController {
     
     func SignInUser(Email:String,Password:String){
-    
+        
         Auth.auth().signIn(withEmail: Email, password: Password) { AuthDataResult, error in
             
             if error == nil {
                 
                 self.performSegue(withIdentifier: "move", sender: nil)
-
+                
                 print("yasss")
                 
             }else{
@@ -55,17 +58,22 @@ class ViewController: UIViewController {
                 
                 print("nooooooo")
             }
-            
         }
-        
-        
+    }
+}
+
+
+
+extension UITextField {
+    
+    @IBInspectable var placeholderColor: UIColor? {
+        get {return self.placeholderColor}
+        set {self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor : newValue!])}
         
     }
-    
-    
-    
-    
 }
+
+
 extension UITextField {
     
     func customTextfield (){
@@ -79,18 +87,6 @@ extension UITextField {
             underLineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3),
             underLineView.heightAnchor.constraint(equalToConstant: 1 )
         ])
-    }
-    
-    
-    
-    
-   
-}
-
-extension UITextField{
-    @IBInspectable var placeholderColor: UIColor? {
-        get {return self.placeholderColor}
-        set {self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor : newValue!])}
     }
 }
 

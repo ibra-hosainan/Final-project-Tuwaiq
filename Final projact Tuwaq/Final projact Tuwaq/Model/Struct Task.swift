@@ -8,12 +8,10 @@
 import Foundation
 
 
-struct Task{
+struct Task {
     
     var subjact : String
-    
     var dete : String
-    
     var descrabtion : String
-        
+    
 }

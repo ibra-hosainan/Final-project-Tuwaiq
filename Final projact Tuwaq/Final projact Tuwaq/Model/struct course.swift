@@ -7,17 +7,10 @@
 
 import Foundation
 
-
-
-
-
-
 struct course{
     
     var name : String
     var hourse : String
-    var absent : [Absence]
-    
-    
-    
+    var absent : [Absencen]
+
 }

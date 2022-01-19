@@ -9,22 +9,19 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
-  
+    
     let db = Firestore.firestore()
-
+    var pickerView = UIPickerView()
+    
     var Universitie = [" جامعه الملك سعود","جامعه الملك عبدالعزيز" ,"جامعه الامير سطام بن عبدالعزيز","جامعه الإمام جامعه المجمعه","جامعه شقراء","جامعه ام القرى","جامعه نجران","جامعه تبوك","جامعه الطائف"]
     
     @IBOutlet weak var NameTextFiled: UITextField!
-    
     @IBOutlet weak var UniversitieTextFiled: UITextField!
-    
-    
     @IBOutlet weak var EmailTextFiled: UITextField!
-    
-    
     @IBOutlet weak var passwordTextFiled: UITextField!
-    var pickerView = UIPickerView()
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,15 +30,12 @@ class SignUpViewController: UIViewController {
         passwordTextFiled.customTextfield()
         UniversitieTextFiled.customTextfield()
         
+        pickerView.delegate = self
+        pickerView.dataSource = self
         
-       // createArticleOutlet.layer.cornerRadius = 20
-
-       pickerView.delegate = self
-      pickerView.dataSource = self
-
         UniversitieTextFiled.inputView = pickerView
         UniversitieTextFiled.textAlignment = .right
-     
+        
     }
     
     @IBAction func creatNewUsearBouton(_ sender: Any) {
@@ -54,65 +48,6 @@ class SignUpViewController: UIViewController {
         
         SignInUser(Email: EmailTextFiled.text!, Password: passwordTextFiled.text!)
     }
-  
-    
-    func creatNewUsear(Email:String,Password:String){
-        Auth.auth().createUser(withEmail: Email, password: Password) { authResult, error in
-            
-            if error == nil {
-                
-                self.db.collection("Users")
-                   .addDocument(data:
-                                   [
-                                    "name" : "\(self.NameTextFiled.text!)",
-                                    "email": "\(self.EmailTextFiled.text!)",
-                                    "password": "\(self.passwordTextFiled.text!)",
-                                    "Universitie": "\(self.UniversitieTextFiled.text!)",
-
-                                       
-                                   ])
-               { error in
-                       if error == nil {
-                           print("New document has been created...")
-                       } else {
-                           print("error\(error!.localizedDescription)")
-                       }
-                       
-                   }
-        }
-        }
-    
-    }
-    
-    
-    func SignInUser(Email:String,Password:String){
-    
-    
-        
-        Auth.auth().signIn(withEmail: Email, password: Password) { AuthDataResult, error in
-            
-            if error == nil {
-                
-                self.performSegue(withIdentifier: "moveHome", sender: nil)
-                
-                print("yassssss")
-                
-                
-            }else{
-                
-                print(error?.localizedDescription)
-                
-                print("Noooooooooo")
-            }
-            
-        }
-        
-        
-        
-    }
-    
-    
-    
     
 }
 
@@ -121,7 +56,7 @@ class SignUpViewController: UIViewController {
 
 
 extension SignUpViewController : UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 1
@@ -142,7 +77,62 @@ extension SignUpViewController : UIPickerViewDelegate, UIPickerViewDataSource {
         
         UniversitieTextFiled.text = Universitie[row]
         UniversitieTextFiled.resignFirstResponder()
-
+        
     }
-
+    
 }
+
+
+extension SignUpViewController {
+    
+    
+    func creatNewUsear(Email:String,Password:String){
+        Auth.auth().createUser(withEmail: Email, password: Password) { authResult, error in
+            
+            if error == nil {
+                
+                self.db.collection("Users")
+                    .addDocument(data:
+                                    [
+                                        "name" : "\(self.NameTextFiled.text!)",
+                                        "email": "\(self.EmailTextFiled.text!)",
+                                        "password": "\(self.passwordTextFiled.text!)",
+                                        "Universitie": "\(self.UniversitieTextFiled.text!)",
+                                        
+                                        
+                                    ])
+                { error in
+                    if error == nil {
+                        print("New document has been created...")
+                    } else {
+                        print("error\(error!.localizedDescription)")
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
+    func SignInUser(Email:String,Password:String){
+        
+        Auth.auth().signIn(withEmail: Email, password: Password) { AuthDataResult, error in
+            
+            if error == nil {
+                
+                self.performSegue(withIdentifier: "moveHome", sender: nil)
+                
+                print("yassssss")
+                
+                
+            }else{
+                
+                print(error?.localizedDescription)
+                
+                print("Noooooooooo")
+            }
+            
+        }
+    }
+}
+

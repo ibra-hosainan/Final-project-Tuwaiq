@@ -67,7 +67,7 @@
 		871CA3DA279013EB00334695 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		871CA3DC2790360500334695 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8738E36427980104000E5C04 /* HideKeubord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeubord.swift; sourceTree = "<group>"; };
-		8738E36927982376000E5C04 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchScreen.swift; path = "Final projact Tuwaq/LunchScreen.swift"; sourceTree = SOURCE_ROOT; };
+		8738E36927982376000E5C04 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchScreen.swift; path = "Final projact Tuwaq/Controller/LunchScreen.swift"; sourceTree = SOURCE_ROOT; };
 		8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8852-searching-for-word.json"; sourceTree = "<group>"; };
 		8738E36C279823D1000E5C04 /* 53207-empty-file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "53207-empty-file.json"; sourceTree = "<group>"; };
 		8738E36D279823D1000E5C04 /* 4887-book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4887-book.json"; sourceTree = "<group>"; };
@@ -118,17 +118,14 @@
 		87070EDC2781C40D00971DF7 /* Final projact Tuwaq */ = {
 			isa = PBXGroup;
 			children = (
-				8738E36327973FEA000E5C04 /* View */,
-				8738E36227973FC4000E5C04 /* controller */,
 				8738E36127973DDB000E5C04 /* Model */,
+				8738E36327973FEA000E5C04 /* View */,
+				8738E36227973FC4000E5C04 /* Controller */,
 				87070EDD2781C40D00971DF7 /* AppDelegate.swift */,
 				87070EDF2781C40D00971DF7 /* SceneDelegate.swift */,
 				87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */,
 				87070EEE2781C41600971DF7 /* Info.plist */,
 				87070EE62781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld */,
-				87F08BC72791621000327DA1 /* GPAViewController.swift */,
-				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
-				8738E36927982376000E5C04 /* LunchScreen.swift */,
 				8738E36D279823D1000E5C04 /* 4887-book.json */,
 				8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */,
 				8738E36C279823D1000E5C04 /* 53207-empty-file.json */,
@@ -148,9 +145,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8738E36227973FC4000E5C04 /* controller */ = {
+		8738E36227973FC4000E5C04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8738E36927982376000E5C04 /* LunchScreen.swift */,
 				87070EE12781C40D00971DF7 /* ViewController.swift */,
 				871CA3DC2790360500334695 /* TabBarViewController.swift */,
 				87070EFF27822CAC00971DF7 /* SignUpViewController.swift */,
@@ -164,18 +162,20 @@
 				87AD4087278C1D240085645F /* TaskkViewController.swift */,
 				87AD408B278C226F0085645F /* TaskkTableViewCell.swift */,
 				87AD4089278C1F370085645F /* RigsterTaskViewController.swift */,
+				87F08BC72791621000327DA1 /* GPAViewController.swift */,
+				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
 				871CA3DA279013EB00334695 /* profileViewController.swift */,
+				87821BEE2798606E00F9E22A /* ForgotPasswordViewController.swift */,
 			);
-			path = controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		8738E36327973FEA000E5C04 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				87070EE32781C40D00971DF7 /* Main.storyboard */,
-				87070EE92781C41600971DF7 /* Assets.xcassets */,
 				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
-				87821BEE2798606E00F9E22A /* ForgotPasswordViewController.swift */,
+				87070EE92781C41600971DF7 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";

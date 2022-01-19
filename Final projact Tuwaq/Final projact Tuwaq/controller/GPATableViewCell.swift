@@ -8,33 +8,27 @@
 import UIKit
 
 
-@objc protocol TableViewDelegate: NSObjectProtocol{
-
-    func afterClickingReturnInTextField(cell: GPATableViewCell)
-}
-
-
 class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
 
     var index : Int = 0
+    var gpaDelegate: GPADelegate?
+    //var dlgeat : cal?
+
     @IBOutlet weak var subjactNameTextFiled: UITextField!
-    
     @IBOutlet weak var hoursTextFiled: UITextField!
-    
     @IBOutlet weak var greadTextFiled: UITextField!
     
-    //var dlgeat : cal?
-     var gpaDelegate: GPADelegate?
 
-   
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
         subjactNameTextFiled.delegate = self
         hoursTextFiled.delegate = self
         greadTextFiled.delegate = self
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         subjactNameTextFiled.resignFirstResponder()
         hoursTextFiled.resignFirstResponder()
@@ -68,12 +62,17 @@ class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }
+
 protocol GPADelegate  {
 
     func clculite(index : Int ,subjactName : String , hours : Int , gread : Int)
 }
 
+
+@objc protocol TableViewDelegate: NSObjectProtocol{
+
+    func afterClickingReturnInTextField(cell: GPATableViewCell)
+}
