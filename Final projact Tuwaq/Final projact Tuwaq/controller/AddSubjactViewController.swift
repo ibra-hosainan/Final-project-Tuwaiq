@@ -52,6 +52,7 @@ class AddSubjactViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         hourseTextFiled.inputView = pickerView
         hourseTextFiled.textAlignment = .right
+        hideKeyboardWhenTappedAround()
     }
     
     

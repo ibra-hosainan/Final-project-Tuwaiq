@@ -7,7 +7,18 @@
 
 import UIKit
 
-class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewDelegate{
+class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewDelegate , GPADelegate{
+    
+    
+    func clculite(index: Int, subjactName: String, hours: Int, gread: Int) {
+        arrayGrade[index].subjactName = subjactName
+        arrayGrade[index].hours = hours
+        arrayGrade[index].grade = gread
+        print(arrayGrade)
+        MyGpaTableView.reloadData()
+        
+    }
+    
     
     var valueToPass : String = ""
     var valueToPass2 : Int = 0
@@ -48,7 +59,7 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         MyGpaTableView.dataSource = self
         MyGpaTableView.delegate = self
-        
+        hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +71,8 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.subjactNameTextFiled.text = "\(arrayGrade[indexPath.row].subjactName)"
         cell.hoursTextFiled.text = "\( arrayGrade[indexPath.row].hours)"
         cell.greadTextFiled.text =  "\(arrayGrade[indexPath.row].grade)"
-        //cell.index = indexPath.row
+        cell.index = indexPath.row
+        cell.gpaDelegate = self
         //cell.tableViewDelegate = (self as TableViewDelegate)
 
         
@@ -82,7 +94,12 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
             x += GpaCours.hours
             
         }
-        GPA = temp/x
+        if x == 0 {
+            
+        }else{
+            GPA = temp/x
+
+        }
        print(GPA)
        
        
@@ -94,7 +111,7 @@ class GPAViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
     
         
-        arrayGrade.append(Grade(subjactName: "hhh ", hours: 3, grade: 95))
+        arrayGrade.append(Grade(subjactName: "", hours: 0, grade: 0))
         MyGpaTableView.reloadData()
         
     }

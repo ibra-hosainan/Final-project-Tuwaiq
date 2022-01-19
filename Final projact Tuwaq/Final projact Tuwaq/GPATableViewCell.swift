@@ -24,7 +24,7 @@ class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var greadTextFiled: UITextField!
     
     //var dlgeat : cal?
-    weak var tableViewDelegate: TableViewDelegate?
+     var gpaDelegate: GPADelegate?
 
    
     override func awakeFromNib() {
@@ -33,6 +33,7 @@ class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
         subjactNameTextFiled.delegate = self
         hoursTextFiled.delegate = self
         greadTextFiled.delegate = self
+        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         subjactNameTextFiled.resignFirstResponder()
@@ -42,8 +43,26 @@ class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(textField.text)
+    func textFieldDidBeginEditing(_ textFiedld: UITextField) {
+//        updateFields()
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateFields()
+
+    }
+    
+    
+    
+    func updateFields() {
+    
+        print(subjactNameTextFiled.text)
+        print(hoursTextFiled.text)
+        print(greadTextFiled.text)
+        
+        gpaDelegate?.clculite(index: index, subjactName: subjactNameTextFiled.text ?? "", hours: Int(hoursTextFiled.text ?? "0" ) ?? 0 , gread: Int(greadTextFiled.text ?? "0") ?? 0)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -53,8 +72,8 @@ class GPATableViewCell: UITableViewCell,UITextFieldDelegate {
     }
 
 }
-//protocol cal  {
-//
-//    func clculite(index : Int ,subjactName : String , hours : Int , gread : Int)
-//}
+protocol GPADelegate  {
+
+    func clculite(index : Int ,subjactName : String , hours : Int , gread : Int)
+}
 

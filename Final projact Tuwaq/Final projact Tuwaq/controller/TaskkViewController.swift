@@ -20,13 +20,13 @@ class TaskkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
+//        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
+//        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
         
-        addTaskboutton.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
-       addTaskboutton.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        addTaskboutton.setImage(largeBoldPost, for: .normal)
-        addTaskboutton.setRounded()
+//        addTaskboutton.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
+//       addTaskboutton.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+//        addTaskboutton.setImage(largeBoldPost, for: .normal)
+//        addTaskboutton.setRounded()
         MyTaskTableView.dataSource = self
         MyTaskTableView.delegate = self
 

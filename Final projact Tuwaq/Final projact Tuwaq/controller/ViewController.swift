@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         EmailTextFiled.customTextfield()
         passwordTextFiled.customTextfield()
+        hideKeyboardWhenTappedAround()
     }
     
     

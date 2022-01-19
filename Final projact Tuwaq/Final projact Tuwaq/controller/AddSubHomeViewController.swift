@@ -71,7 +71,7 @@ class AddSubHomeViewController: UIViewController, UIPickerViewDelegate, UIPicker
         timesAbsenceTextFiled.inputView = pickerView
         timesAbsenceTextFiled.textAlignment = .right
         
-  
+         hideKeyboardWhenTappedAround()
     }
     
    

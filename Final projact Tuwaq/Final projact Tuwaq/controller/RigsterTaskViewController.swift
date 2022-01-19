@@ -31,7 +31,7 @@ class RigsterTaskViewController: UIViewController {
 
         showDatePicker()
         
-        
+        hideKeyboardWhenTappedAround()
         
         //frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
         

@@ -56,15 +56,15 @@ class SubHomeViewController: UIViewController{
         getData()
         
         
-        
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-
-        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
-
-        openAddApcentOutlet.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
-        openAddApcentOutlet.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        openAddApcentOutlet.setImage(largeBoldPost, for: .normal)
-        openAddApcentOutlet.setRounded()
+//        
+//        let largeConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
+//
+//        let largeBoldPost = UIImage(systemName: "plus.circle.fill", withConfiguration: largeConfig)
+//
+//        openAddApcentOutlet.frame = CGRect(x: 40, y: 740, width: 60 , height: 60)
+//        openAddApcentOutlet.tintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+//        openAddApcentOutlet.setImage(largeBoldPost, for: .normal)
+//        openAddApcentOutlet.setRounded()
 
         
         

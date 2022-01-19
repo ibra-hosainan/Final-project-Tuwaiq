@@ -18,9 +18,7 @@
 		87070EF82781C4D000971DF7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 87070EF72781C4D000971DF7 /* FirebaseDatabase */; };
 		87070EFA2781C4D000971DF7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 87070EF92781C4D000971DF7 /* FirebaseFirestore */; };
 		87070EFC2781CAF400971DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */; };
-		87070EFE27822BE700971DF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070EFD27822BE700971DF7 /* HomeViewController.swift */; };
 		87070F0027822CAC00971DF7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070EFF27822CAC00971DF7 /* SignUpViewController.swift */; };
-		87070F0227830CDE00971DF7 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */; };
 		87070F04278412E200971DF7 /* SubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F03278412E200971DF7 /* SubHomeViewController.swift */; };
 		87070F062784136200971DF7 /* SubHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F052784136200971DF7 /* SubHomeTableViewCell.swift */; };
 		87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87070F092784289200971DF7 /* Struct Absence.swift */; };
@@ -29,8 +27,15 @@
 		871CA3D9278ED19A00334695 /* AddSubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */; };
 		871CA3DB279013EB00334695 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DA279013EB00334695 /* profileViewController.swift */; };
 		871CA3DD2790360500334695 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DC2790360500334695 /* TabBarViewController.swift */; };
+		8738E36527980104000E5C04 /* HideKeubord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738E36427980104000E5C04 /* HideKeubord.swift */; };
+		8738E368279822B4000E5C04 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8738E367279822B4000E5C04 /* Lottie */; };
+		8738E36A27982376000E5C04 /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738E36927982376000E5C04 /* LunchScreen.swift */; };
+		8738E36E279823D2000E5C04 /* 8852-searching-for-word.json in Resources */ = {isa = PBXBuildFile; fileRef = 8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */; };
+		8738E36F279823D2000E5C04 /* 53207-empty-file.json in Resources */ = {isa = PBXBuildFile; fileRef = 8738E36C279823D1000E5C04 /* 53207-empty-file.json */; };
+		8738E370279823D2000E5C04 /* 4887-book.json in Resources */ = {isa = PBXBuildFile; fileRef = 8738E36D279823D1000E5C04 /* 4887-book.json */; };
 		873A5E4A279159D800E815D4 /* GPATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A5E49279159D800E815D4 /* GPATableViewCell.swift */; };
 		873BDBE9278AF8EC00211DE8 /* Struct Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BDBE8278AF8EC00211DE8 /* Struct Task.swift */; };
+		87821BEF2798606E00F9E22A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87821BEE2798606E00F9E22A /* ForgotPasswordViewController.swift */; };
 		8783692A278DBF7400F5675B /* AddSubjactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87836929278DBF7400F5675B /* AddSubjactViewController.swift */; };
 		8783692C278DC4E700F5675B /* HomeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783692B278DC4E700F5675B /* HomeeViewController.swift */; };
 		8783692E278DC63000F5675B /* HomeeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783692D278DC63000F5675B /* HomeeCellTableViewCell.swift */; };
@@ -52,9 +57,7 @@
 		87070EEC2781C41600971DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87070EEE2781C41600971DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		87070EFD27822BE700971DF7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		87070EFF27822CAC00971DF7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		87070F03278412E200971DF7 /* SubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHomeViewController.swift; sourceTree = "<group>"; };
 		87070F052784136200971DF7 /* SubHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHomeTableViewCell.swift; sourceTree = "<group>"; };
 		87070F092784289200971DF7 /* Struct Absence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Absence.swift"; sourceTree = "<group>"; };
@@ -63,8 +66,14 @@
 		871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubHomeViewController.swift; sourceTree = "<group>"; };
 		871CA3DA279013EB00334695 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		871CA3DC2790360500334695 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8738E36427980104000E5C04 /* HideKeubord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeubord.swift; sourceTree = "<group>"; };
+		8738E36927982376000E5C04 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchScreen.swift; path = "Final projact Tuwaq/LunchScreen.swift"; sourceTree = SOURCE_ROOT; };
+		8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8852-searching-for-word.json"; sourceTree = "<group>"; };
+		8738E36C279823D1000E5C04 /* 53207-empty-file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "53207-empty-file.json"; sourceTree = "<group>"; };
+		8738E36D279823D1000E5C04 /* 4887-book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4887-book.json"; sourceTree = "<group>"; };
 		873A5E49279159D800E815D4 /* GPATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPATableViewCell.swift; sourceTree = "<group>"; };
 		873BDBE8278AF8EC00211DE8 /* Struct Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Task.swift"; sourceTree = "<group>"; };
+		87821BEE2798606E00F9E22A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		87836929278DBF7400F5675B /* AddSubjactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjactViewController.swift; sourceTree = "<group>"; };
 		8783692B278DC4E700F5675B /* HomeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeViewController.swift; sourceTree = "<group>"; };
 		8783692D278DC63000F5675B /* HomeeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeeCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +92,7 @@
 				87070EF82781C4D000971DF7 /* FirebaseDatabase in Frameworks */,
 				87070EF62781C4D000971DF7 /* FirebaseAuth in Frameworks */,
 				87070EFA2781C4D000971DF7 /* FirebaseFirestore in Frameworks */,
+				8738E368279822B4000E5C04 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +126,12 @@
 				87070EFB2781CAF400971DF7 /* GoogleService-Info.plist */,
 				87070EEE2781C41600971DF7 /* Info.plist */,
 				87070EE62781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld */,
-				87070EFD27822BE700971DF7 /* HomeViewController.swift */,
-				87070F0127830CDE00971DF7 /* HomeTableViewCell.swift */,
 				87F08BC72791621000327DA1 /* GPAViewController.swift */,
 				873A5E49279159D800E815D4 /* GPATableViewCell.swift */,
+				8738E36927982376000E5C04 /* LunchScreen.swift */,
+				8738E36D279823D1000E5C04 /* 4887-book.json */,
+				8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */,
+				8738E36C279823D1000E5C04 /* 53207-empty-file.json */,
 			);
 			path = "Final projact Tuwaq";
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 		8738E36127973DDB000E5C04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8738E36427980104000E5C04 /* HideKeubord.swift */,
 				87070F0B278428E900971DF7 /* struct course.swift */,
 				87070F092784289200971DF7 /* Struct Absence.swift */,
 				873BDBE8278AF8EC00211DE8 /* Struct Task.swift */,
@@ -162,6 +175,7 @@
 				87070EE32781C40D00971DF7 /* Main.storyboard */,
 				87070EE92781C41600971DF7 /* Assets.xcassets */,
 				87070EEB2781C41600971DF7 /* LaunchScreen.storyboard */,
+				87821BEE2798606E00F9E22A /* ForgotPasswordViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +200,7 @@
 				87070EF52781C4D000971DF7 /* FirebaseAuth */,
 				87070EF72781C4D000971DF7 /* FirebaseDatabase */,
 				87070EF92781C4D000971DF7 /* FirebaseFirestore */,
+				8738E367279822B4000E5C04 /* Lottie */,
 			);
 			productName = "Final projact Tuwaq";
 			productReference = 87070EDA2781C40D00971DF7 /* Final projact Tuwaq.app */;
@@ -217,6 +232,7 @@
 			mainGroup = 87070ED12781C40D00971DF7;
 			packageReferences = (
 				87070EF42781C4D000971DF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8738E366279822B3000E5C04 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 87070EDB2781C40D00971DF7 /* Products */;
 			projectDirPath = "";
@@ -234,8 +250,11 @@
 			files = (
 				87070EED2781C41600971DF7 /* LaunchScreen.storyboard in Resources */,
 				87070EFC2781CAF400971DF7 /* GoogleService-Info.plist in Resources */,
+				8738E36E279823D2000E5C04 /* 8852-searching-for-word.json in Resources */,
 				87070EEA2781C41600971DF7 /* Assets.xcassets in Resources */,
 				87070EE52781C40D00971DF7 /* Main.storyboard in Resources */,
+				8738E370279823D2000E5C04 /* 4887-book.json in Resources */,
+				8738E36F279823D2000E5C04 /* 53207-empty-file.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,13 +274,14 @@
 				87AD408C278C226F0085645F /* TaskkTableViewCell.swift in Sources */,
 				8783692E278DC63000F5675B /* HomeeCellTableViewCell.swift in Sources */,
 				87AD4088278C1D240085645F /* TaskkViewController.swift in Sources */,
-				87070EFE27822BE700971DF7 /* HomeViewController.swift in Sources */,
+				8738E36A27982376000E5C04 /* LunchScreen.swift in Sources */,
+				87821BEF2798606E00F9E22A /* ForgotPasswordViewController.swift in Sources */,
 				87070F0C278428E900971DF7 /* struct course.swift in Sources */,
-				87070F0227830CDE00971DF7 /* HomeTableViewCell.swift in Sources */,
 				87070EE22781C40D00971DF7 /* ViewController.swift in Sources */,
 				8783692C278DC4E700F5675B /* HomeeViewController.swift in Sources */,
 				87070EDE2781C40D00971DF7 /* AppDelegate.swift in Sources */,
 				87070EE82781C40D00971DF7 /* Final_projact_Tuwaq.xcdatamodeld in Sources */,
+				8738E36527980104000E5C04 /* HideKeubord.swift in Sources */,
 				87AD408A278C1F370085645F /* RigsterTaskViewController.swift in Sources */,
 				87070F0A2784289200971DF7 /* Struct Absence.swift in Sources */,
 				87F08BC82791621000327DA1 /* GPAViewController.swift in Sources */,
@@ -498,6 +518,14 @@
 				kind = branch;
 			};
 		};
+		8738E366279822B3000E5C04 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -515,6 +543,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87070EF42781C4D000971DF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		8738E367279822B4000E5C04 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8738E366279822B3000E5C04 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 
