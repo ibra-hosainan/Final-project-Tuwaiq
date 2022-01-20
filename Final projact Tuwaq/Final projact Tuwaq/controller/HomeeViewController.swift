@@ -96,6 +96,17 @@ extension HomeeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
+        if arraySubjects.count == 0 {
+            
+            myHomeeTableView.backgroundView = MyView
+            
+        }else{
+            
+            myHomeeTableView.backgroundView = nil
+
+            
+        }
         return arraySubjects.count
         
     }

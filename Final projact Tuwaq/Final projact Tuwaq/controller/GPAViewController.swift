@@ -15,6 +15,7 @@ class GPAViewController : UIViewController {
     
     @IBOutlet weak var MyGpaTableView: UITableView!
     
+    @IBOutlet weak var resultGba: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,13 @@ extension GPAViewController : GPADelegate {
             GPA = temp/x * 0.05
             
         }
+        
+        self.resultGba.text = "\(round(GPA*100)/100)"
         print("GPA : ",GPA)
+        
+        
+
+        
     }
 }
 
