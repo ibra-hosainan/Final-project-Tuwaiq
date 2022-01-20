@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Lottie
 
 class profileViewController: UIViewController {
     
@@ -25,7 +26,7 @@ class profileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         getData()
-        
+        configureAnimation()
         //        let darkModeEnabled = defaults.bool(forKey: "darkModeEnabled")
         //
         //        if darkModeEnabled == true {
@@ -82,7 +83,18 @@ extension profileViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
+    func configureAnimation() {
+        
+        let animation = Animation.named("92280-ic-profile")
+        let animationView = AnimationView(animation:animation)
+        animationView.contentMode = .scaleAspectFill
+        animationView.frame = CGRect(x: 160, y: 270, width: 100, height: 100)
+        view.addSubview(animationView)
+        animationView.play()
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+       
+    }
     
     func getData(){
         

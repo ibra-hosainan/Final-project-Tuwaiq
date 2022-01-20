@@ -14,6 +14,7 @@ class TaskkViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     var arrayTask : [Task] = []
     
+    @IBOutlet weak var MyTaskView: UIView!
     @IBOutlet weak var addTaskboutton: UIButton!
     @IBOutlet weak var MyTaskTableView: UITableView!
     
@@ -44,8 +45,15 @@ class TaskkViewController: UIViewController {
 extension TaskkViewController : UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        arrayTask.count
+        if arrayTask.count == 0 {
+            MyTaskTableView.backgroundView = MyTaskView
+            
+        }else{
+            
+            MyTaskTableView.backgroundView = nil
+            
+        }
+       return arrayTask.count
         
     }
     

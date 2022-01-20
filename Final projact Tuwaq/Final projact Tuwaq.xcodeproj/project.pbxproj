@@ -27,6 +27,7 @@
 		871CA3D9278ED19A00334695 /* AddSubHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */; };
 		871CA3DB279013EB00334695 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DA279013EB00334695 /* profileViewController.swift */; };
 		871CA3DD2790360500334695 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3DC2790360500334695 /* TabBarViewController.swift */; };
+		8726B8B427999FBA00BD2475 /* 92280-ic-profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 8726B8B327999FBA00BD2475 /* 92280-ic-profile.json */; };
 		8738E36527980104000E5C04 /* HideKeubord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738E36427980104000E5C04 /* HideKeubord.swift */; };
 		8738E368279822B4000E5C04 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8738E367279822B4000E5C04 /* Lottie */; };
 		8738E36A27982376000E5C04 /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8738E36927982376000E5C04 /* LunchScreen.swift */; };
@@ -66,6 +67,7 @@
 		871CA3D8278ED19A00334695 /* AddSubHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubHomeViewController.swift; sourceTree = "<group>"; };
 		871CA3DA279013EB00334695 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		871CA3DC2790360500334695 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8726B8B327999FBA00BD2475 /* 92280-ic-profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "92280-ic-profile.json"; sourceTree = "<group>"; };
 		8738E36427980104000E5C04 /* HideKeubord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeubord.swift; sourceTree = "<group>"; };
 		8738E36927982376000E5C04 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LunchScreen.swift; path = "Final projact Tuwaq/Controller/LunchScreen.swift"; sourceTree = SOURCE_ROOT; };
 		8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8852-searching-for-word.json"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				8738E36D279823D1000E5C04 /* 4887-book.json */,
 				8738E36B279823D1000E5C04 /* 8852-searching-for-word.json */,
 				8738E36C279823D1000E5C04 /* 53207-empty-file.json */,
+				8726B8B327999FBA00BD2475 /* 92280-ic-profile.json */,
 			);
 			path = "Final projact Tuwaq";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87070EED2781C41600971DF7 /* LaunchScreen.storyboard in Resources */,
+				8726B8B427999FBA00BD2475 /* 92280-ic-profile.json in Resources */,
 				87070EFC2781CAF400971DF7 /* GoogleService-Info.plist in Resources */,
 				8738E36E279823D2000E5C04 /* 8852-searching-for-word.json in Resources */,
 				87070EEA2781C41600971DF7 /* Assets.xcassets in Resources */,
