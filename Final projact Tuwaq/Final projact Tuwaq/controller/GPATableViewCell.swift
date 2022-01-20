@@ -72,7 +72,7 @@ protocol GPADelegate  {
 }
 
 
-@objc protocol TableViewDelegate: NSObjectProtocol{
-
-    func afterClickingReturnInTextField(cell: GPATableViewCell)
-}
+//@objc protocol TableViewDelegate: NSObjectProtocol{
+//
+//    func afterClickingReturnInTextField(cell: GPATableViewCell)
+//}

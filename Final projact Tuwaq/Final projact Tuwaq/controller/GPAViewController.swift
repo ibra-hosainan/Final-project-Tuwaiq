@@ -54,19 +54,19 @@ extension GPAViewController : GPADelegate {
     
     func calculatGPA(){
         
-        var GPA : Int = 0
-        var temp : Int = 0
-        var x : Int = 0
+        var GPA : Double = 0
+        var temp : Double = 0
+        var x : Double = 0
         
         arrayGrade.forEach { GpaCours in
-            temp += GpaCours.hours * GpaCours.grade
-            x += GpaCours.hours
+            temp += Double(GpaCours.hours * GpaCours.grade)
+            x += Double(GpaCours.hours)
             
         }
         if x == 0 {
             
         }else{
-            GPA = temp/x
+            GPA = temp/x * 0.05
             
         }
         print("GPA : ",GPA)
